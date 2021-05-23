@@ -1,0 +1,70 @@
+# creating and selecting database
+create database db;
+use db;
+#creating table
+create table abc (
+id int not null,
+Fist_name varchar(222),
+Last_name varchar(222),
+Mobile_no int(10),
+primary key(id)
+);
+
+create table abc2(
+id int not null, 
+Email varchar(222),
+City longtext,
+primary key(id)
+);
+
+#inserting values
+insert into abc (id, Fist_name,Last_name,Mobile_no)
+value
+(1, "aman", "mourya", 222222222),
+(2, "deepak","kumar", 333333333),
+(3, "megha", "bhatter", 444444444),
+(4, "Pranav", "banerjee", 444444444);
+
+#getting data frim table
+select * from abc;
+select id from abc;
+#inserting exrta data in able
+insert into abc (id, Fist_name,Last_name,Mobile_no)
+value
+(5, "Aman", "Mahajan", null);
+
+
+#selecting specific data by name and AND/OR condication
+select * from abc where Fist_name = "aman";
+select * from abc where Fist_name = "aman" and Last_name ="mourya";
+
+#adding value age coloum in table abc
+alter table abc
+add Age int;
+select * from abc;
+
+#Removing colum from table
+alter table abc
+add Age1 int;
+
+#updating table
+Update abc
+Set	Age = 25
+where fist_name = "Aman" and last_name = "mourya";
+
+#inseting vlaues in table 2 abc
+insert into abc2 (id, Email, City)
+value 
+(1, "abc@gmail.com", "Mumbai"),
+(2, "xyz@hotmail.com", "Hyderabad"),
+(3, "ads@outlook.com", "Delhi"),
+(4, "ads@mail.com", "Delhi");
+
+#Joing table there are  6 join inner join, left join, right join, self join
+SELECT *
+FROM abc
+Left JOIN abc2 ON abc.id=abc2.id;
+
+#Selecting data
+Select * from abc2 where Fist_name = "Aman";
+select * from abc order by mobile_no, DESC;
